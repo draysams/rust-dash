@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build:css": "tailwindcss -i ./style/input.css -o ./style/output/output.css",
+    "watch:css": "tailwindcss -i ./style/input.css -o ./style/output/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

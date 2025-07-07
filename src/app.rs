@@ -14,6 +14,7 @@ pub fn App() -> impl IntoView {
         // injects a stylesheet into the document <head>
         // id=leptos means cargo-leptos will hot-reload this stylesheet
         <Stylesheet id="leptos" href="/pkg/rust-dash.css"/>
+        <link data-trunk rel="tailwind-css" href="/style/input.css"/>
 
         // sets the document title
         <Title text="Welcome to Leptos"/>
@@ -39,7 +40,7 @@ fn HomePage() -> impl IntoView {
 
     view! {
         <h1>"Welcome to Leptos!"</h1>
-        <button on:click=on_click>"Click Me: " {count}</button>
+        <button class="bg-red-500 text-white p-2 rounded-md" on:click=on_click>"Click Me: " {count}</button>
     }
 }
 
