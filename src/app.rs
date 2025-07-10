@@ -1,6 +1,8 @@
 pub mod db;
 pub mod models;
+pub mod pages;
 pub mod server_functions;
+use pages::{HomePage, TeamPage};
 
 use leptos::prelude::*;
 use leptos_meta::{provide_meta_context, Stylesheet, Title};
@@ -21,30 +23,18 @@ pub fn App() -> impl IntoView {
         <link data-trunk rel="tailwind-css" href="/style/input.css"/>
 
         // sets the document title
-        <Title text="Welcome to Leptos"/>
+        <Title text="Rust Dash"/>
 
         // content for this welcome page
         <Router>
             <main>
                 <Routes fallback=move || "Not found.">
                     <Route path=StaticSegment("") view=HomePage/>
+                    <Route path=StaticSegment("/team") view=TeamPage/>
                     <Route path=WildcardSegment("any") view=NotFound/>
                 </Routes>
             </main>
         </Router>
-    }
-}
-
-/// Renders the home page of your application.
-#[component]
-fn HomePage() -> impl IntoView {
-    // Creates a reactive value to update the button
-    let count = RwSignal::new(0);
-    let on_click = move |_| *count.write() += 1;
-
-    view! {
-        <h1>"Welcome to Leptos!"</h1>
-        <button class="bg-red-500 text-white p-2 rounded-md" on:click=on_click>"Click Me: " {count}</button>
     }
 }
 
