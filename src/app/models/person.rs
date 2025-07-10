@@ -6,9 +6,9 @@ pub struct Person {
     pub uuid: String,
     #[validate(length(min = 1, message = "Name is required"))]
     pub name: String,
-    #[validate(range(min = 1, message = "Title is required"))]
+    #[validate(length(min = 1, message = "Title is required"))]
     pub title: String,
-    #[validate(range(min = 1, message = "Level is required"))]
+    #[validate(length(min = 1, message = "Level is required"))]
     pub level: String,
     #[validate(range(min = 2000, max = 99999))]
     pub compensation: i32,
