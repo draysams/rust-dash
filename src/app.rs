@@ -1,3 +1,7 @@
+pub mod db;
+pub mod models;
+pub mod server_functions;
+
 use leptos::prelude::*;
 use leptos_meta::{provide_meta_context, Stylesheet, Title};
 use leptos_router::{

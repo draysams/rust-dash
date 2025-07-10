@@ -14,3 +14,4 @@ Cargo.lock
 *.pdb
 node_modules/*
 style/output/output.css
+dashboard.db/*
